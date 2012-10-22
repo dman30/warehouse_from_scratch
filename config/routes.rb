@@ -1,10 +1,12 @@
 WarehouseFromScratch::Application.routes.draw do
 
+  get "users/new"
+
   root to: 'warehouse#home'
 
   get "warehouse/home"
 
-  get "warehouse/help"
+  match '/help', to: 'warehouse#help'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

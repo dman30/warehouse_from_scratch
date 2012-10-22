@@ -1,0 +1,6 @@
+Produktformulare:
+  - %ID%.jpg
+Startseite:
+  - %ID%_s.jpg
+Thumbnail
+  - %ID%_t.jpg

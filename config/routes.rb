@@ -8,6 +8,8 @@ WarehouseFromScratch::Application.routes.draw do
 
   match '/help', to: 'warehouse#help'
 
+  match '/signup', to: 'users#new'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

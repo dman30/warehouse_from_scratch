@@ -1,5 +1,7 @@
 module ApplicationHelper
+
   def full_title(string)
-    "Warehouese #{string}"
+    "Warehouse #{string}"
   end
+
 end

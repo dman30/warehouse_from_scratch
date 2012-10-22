@@ -1,4 +1,11 @@
 WarehouseFromScratch::Application.routes.draw do
+
+  root to: 'warehouse#home'
+
+  get "warehouse/home"
+
+  get "warehouse/help"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

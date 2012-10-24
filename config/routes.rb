@@ -1,10 +1,8 @@
 WarehouseFromScratch::Application.routes.draw do
 
-  get "users/new"
+  resources :users
 
   root to: 'warehouse#home'
-
-  get "warehouse/home"
 
   match '/help', to: 'warehouse#help'
 

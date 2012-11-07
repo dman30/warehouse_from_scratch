@@ -1,19 +1,19 @@
-- provide(:title,'Sign up')
-%h1 Sign up
+- provide(:title,'Account erstellen')
+%h1= 'Account erstellen'
 .row
   .span6.offset3
     = form_for(@user) do |f|
-      = render 'shared/error_messages'
+      = render 'shared/error_messages', object: f.object
       = f.label :name
       = f.text_field :name
 
       = f.label :email
       = f.text_field :email
 
-      = f.label :password
+      = f.label :password, "Passwort"
       = f.password_field :password
 
-      = f.label :password_confirmation, "Confirmation"
+      = f.label :password_confirmation, "Bestätigung"
       = f.password_field :password_confirmation
 
-      = f.submit "Create my account", class:"btn btn-large btn-primary"
+      = f.submit "Meinen Account erstellen", class:"btn btn-large btn-primary"

@@ -2,4 +2,5 @@
 .center.hero-unit
   %h1 Warehouse
   %p Eine Application fuer das Verwalten von Inventar und dessen Verteilung auf die Mitarbeiter
-= link_to 'Anmeldung', signup_path
+- unless signed_in?
+  = link_to 'Neuen Account erstellen', signup_path

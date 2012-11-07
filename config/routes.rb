@@ -2,6 +2,10 @@ WarehouseFromScratch::Application.routes.draw do
 
   resources :users
 
+  match '/end_device', to: 'end_device#new'
+
+  resources :end_devices
+
   resources :sessions, only: [:new,:create,:destroy]
 
   root to: 'warehouse#home'
@@ -13,6 +17,7 @@ WarehouseFromScratch::Application.routes.draw do
   match '/signin', to: 'sessions#new'
 
   match '/signout', to: 'sessions#destroy', via: :delete
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

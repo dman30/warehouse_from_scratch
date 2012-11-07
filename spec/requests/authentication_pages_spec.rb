@@ -27,15 +27,28 @@ describe "AuthenticationPages" do
 
         it { should have_selector('title', text: user.name) }
         it { should have_link('Profile', href: user_path(user))}
-        it { should have_link('Sign Out', href: signout_path) }
-        it { should_not have_link('Sign In', href: signin_path) }
+        it { should have_link('Abmelden', href: signout_path) }
+        it { should_not have_link('Anmelden', href: signin_path) }
 
         describe "after visiting another page" do
           before { click_link "Home" }
 
           it { should_not have_selector('div.alert.alert-error') }
+
+          describe 'should not be able to access another user' do
+          end
         end
       end
+    end
+
+    describe 'with valid information' do
+      let(:user){ FactoryGirl.creat(:user) }
+      before { sign_in user }
+
+      it { should have_link('Benutzer', href: user_path(user)) }
+      it { should have_link('Einstellungen', href: edit_user_path(user)) }
+      it { should have_link('Abmelden', href: signout_path) }
+      it { should_not have_link('Anmelden', href: signin_path) }
     end
   end
 end

@@ -5,15 +5,16 @@
       %nav
         %ul.nav.pull-right
           %li= link_to "Home", root_path
-          %li= link_to "Help", help_path
+          %li= link_to "Hilfe", help_path
           - if signed_in?
-            %li= link_to "Users","#"
+            %li= link_to "Endgerät anlegen", new_end_device_path
+            %li= link_to "Mitarbeiter", '#'
             %li.dropdown{id:"fat-menu"}
               %a.dropdown-toggle{"data-toggle"=>"dropdown",href:'#'}Account
               %ul.dropdown-menu
                 %li= link_to 'Profile', current_user
-                %li= link_to 'Settings', '#'
+                %li= link_to 'Einstellungen', edit_user_path(current_user)
                 %li.divider
-                %li=link_to 'Sign Out', signout_path, method: "delete"
+                %li=link_to 'Abmelden', signout_path, method: "delete"
           - else
-            %li=link_to 'Sign In', signin_path
+            %li=link_to 'Anmelden', signin_path
